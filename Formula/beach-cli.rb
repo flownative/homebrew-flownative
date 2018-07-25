@@ -7,6 +7,6 @@ class BeachCli < Formula
   bottle :unneeded
 
   def install
-    bin.install "beach.phar" => "beach"
+    bin.install "beach-0.1.3.phar" => "beach"
   end
 end
