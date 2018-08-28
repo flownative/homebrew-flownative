@@ -4,13 +4,13 @@
 class BeachCli < Formula
   desc "Command line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
-  url "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-0.2.10.phar"
-  sha256 "192d6457cc139f954d09a130c8b78c95714d814e7c0d31e6e57aa28dc0974884"
+  url "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-0.2.11.phar"
+  sha256 "10b9f539348e9c3df0f2ca8b5c6160c90095c159ab1081820400be00037c6299"
 
   bottle :unneeded
 
   def install
-    bin.install "beach-0.2.10.phar" => "beach"
-    system "beach", "localbeach:prepare", "#{bin}/", "#{var}/localbeach"
+    bin.install "beach-0.2.11.phar" => "beach"
+    system "./beach-0.2.11.phar", "localbeach:prepare", "#{bin}/", "#{var}/localbeach"
   end
 end
