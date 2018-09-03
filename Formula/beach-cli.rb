@@ -4,15 +4,15 @@
 class BeachCli < Formula
   desc "Command line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
-  url "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-0.2.20.phar"
-  sha256 "5c70dc1d5c9a8b0ed0a765edbc9f61d259a6369a1c07fe0edc9f5d2d8ec8650a"
+  url "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-0.3.0.phar"
+  sha256 "0cc6d171fdba51274c2f0e05da0636162551f516e92fcf454c532b3b115e5043"
 
   head "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-master.phar"
 
   bottle :unneeded
 
   def install
-    system "php", buildpath/"beach-0.2.20.phar", "localbeach:prepare", "#{lib}/beach-cli/localbeach", "~/Library/Application Support/Flownative/Local Beach/MariaDB"
-    bin.install "beach-0.2.20.phar" => "beach"
+    system "php", buildpath/"beach-0.3.0.phar", "localbeach:prepare", "#{lib}/beach-cli/localbeach", "~/Library/Application Support/Flownative/Local Beach/MariaDB"
+    bin.install "beach-0.3.0.phar" => "beach"
   end
 end
