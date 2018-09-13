@@ -4,15 +4,36 @@
 class BeachCli < Formula
   desc "Command line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
-  url "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-0.5.5.phar"
-  sha256 "afd5594b0de67ca76e953fc223505155ad9118df27e45383b3a3f96022ba0395"
+  url "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-0.5.6.phar"
+  sha256 "afaa9967b2bfe5b7a509f16b5801d1e290f7775b70272fda7313b0f9e476bc71"
 
   head "https://storage.googleapis.com/cli-tool.beach.flownative.cloud/beach-master.phar"
 
   bottle :unneeded
 
   def install
-    system "php", buildpath/"beach-0.5.5.phar", "localbeach:prepare", "#{lib}/beach-cli/localbeach", "~/Library/Application Support/Flownative/Local Beach/MariaDB"
-    bin.install "beach-0.5.5.phar" => "beach"
+    system "php", buildpath/"beach-0.5.6.phar", "localbeach:prepare", "#{lib}/beach-cli/localbeach", "~/Library/Application Support/Flownative/Local Beach/MariaDB"
+    bin.install "beach-0.5.6.phar" => "beach"
+  end
+
+  plist_options :manual => "beach localbeach:start"
+
+  def plist; <<~EOS
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+    <dict>
+      <key>Label</key>
+      <string>#{plist_name}</string>
+      <key>RunAtLoad</key>
+      <true/>
+      <key>ProgramArguments</key>
+      <array>
+        <string>#{opt_bin}/beach</string>
+        <string>localbeach:start</string>
+      </array>
+    </dict>
+  </plist>
+  EOS
   end
 end
