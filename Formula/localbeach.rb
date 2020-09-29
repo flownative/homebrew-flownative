@@ -23,6 +23,6 @@ class Localbeach < Formula
     database_path = RUBY_PLATFORM.downcase.include?("darwin") ? "~/Library/Application Support/Flownative/Local Beach/MariaDB" : "~/.Flownative/Local Beach/MariaDB"
 
     bin.install "beach" => "beach"
-    system "beach", "setup", "#{lib}/localbeach", database_path
+    system "#{bin}/beach", "setup", "#{lib}/localbeach", database_path
   end
 end
