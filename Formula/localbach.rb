@@ -15,10 +15,10 @@ class BeachCli < Formula
   homepage "https://www.flownative.com/beach"
 
   if is_mac?
-    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha17%2B1/beach_darwin_amd64.zip", :using => GitHubReleaseDownloadStrategy
+    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha17%2B1/beach_darwin_amd64.zip", :using => CurlDownloadStrategy
     sha256 "a8e532dc292d184b468db91735ac29389f2b89465d22a3e590faf6b2d20153a8"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha17%2B1/beach_linux_amd64.zip", :using => GitHubReleaseDownloadStrategy
+    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha17%2B1/beach_linux_amd64.zip", :using => CurlDownloadStrategy
     sha256 "02540d3c4b61f1b52023162652c339ef2d05ec6bc72ac56b646d8618905aea0b"
 
   bottle :unneeded
