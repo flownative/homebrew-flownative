@@ -10,7 +10,7 @@ def is_linux?
     RUBY_PLATFORM.downcase.include?("linux")
 end
 
-class BeachCli < Formula
+class Localbeach < Formula
   desc "Command line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
 
