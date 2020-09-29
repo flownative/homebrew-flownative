@@ -21,9 +21,7 @@ class Localbeach < Formula
 
   def install
     database_path = RUBY_PLATFORM.downcase.include?("darwin") ? "~/Library/Application Support/Flownative/Local Beach/MariaDB" : "~/.Flownative/Local Beach/MariaDB"
-    zip_file = RUBY_PLATFORM.downcase.include?("darwin") ? "beach_darwin_amd64.zip" : "beach_linux_amd64.zip"
 
-    system "unzip", zip_file
     bin.install "beach" => "beach"
     system "beach", "setup", "#{lib}/localbeach", database_path
   end
