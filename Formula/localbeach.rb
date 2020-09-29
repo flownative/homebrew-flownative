@@ -6,6 +6,8 @@
 class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
+  license "GPL-3.0-or-later"
+  version "v1.0.0-alpha18"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
     url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha18%2B1/beach_darwin_amd64.zip"
