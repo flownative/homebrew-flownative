@@ -8,11 +8,11 @@ class Localbeach < Formula
   homepage "https://www.flownative.com/beach"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha17%2B1/beach_darwin_amd64.zip"
-    sha256 "a8e532dc292d184b468db91735ac29389f2b89465d22a3e590faf6b2d20153a8"
+    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha18%2B1/beach_darwin_amd64.zip"
+    sha256 "2dbef5bcade44977e7b1bd03fca6d3a79f6110cb49e9a2716dfbd57fb9902e79"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha17%2B1/beach_linux_amd64.zip"
-    sha256 "02540d3c4b61f1b52023162652c339ef2d05ec6bc72ac56b646d8618905aea0b"
+    url "https://github.com/flownative/localbeach/releases/download/v1.0.0-alpha18%2B1/beach_linux_amd64.zip"
+    sha256 "971397c4d3224dba48938ebcda9a979f4d745e2626d420e6ea57a935df03cf49"
   end
 
   bottle :unneeded
