@@ -7,29 +7,29 @@ class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
   license "GPL-3.0-or-later"
-  version "v1.2.0+1"
+  version "v1.2.0.+2"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.2.0+1/beach_darwin_amd64.zip"
-    sha256 "926687ae48f142866794e813734e98aab3b36957ae44e2a239a3ae64b5a9ab7f"
+    url "https://github.com/flownative/localbeach/releases/download/v1.2.0.+2/beach_darwin_amd64.zip"
+    sha256 "81674e877c7da5f19589dc377cb389d07bd112818110c311ae3383e56362ab3a"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.2.0+1/beach_linux_amd64.zip"
-    sha256 "f6c1048562c555f814275a59fc2b075f93855d07e243531cfb05f14e88511189"
+    url "https://github.com/flownative/localbeach/releases/download/v1.2.0.+2/beach_linux_amd64.zip"
+    sha256 "633ea07de7963ae156f4c3d9166beb66f8d1156911e2376738c0f4f5139033a1"
   end
 
   bottle :unneeded
 
   conflicts_with "flownative/flownative/beach-cli", because: "localbeach replaces beach-cli"
 
-  depends_on "docker" => :build
   depends_on "mkcert" => :run
   depends_on "nss" => :run
 
   def install
     database_path = RUBY_PLATFORM.downcase.include?("darwin") ? "~/Library/Application Support/Flownative/Local Beach/MariaDB" : "~/.Flownative/Local Beach/MariaDB"
+    nginx_path = RUBY_PLATFORM.downcase.include?("darwin") ? "~/Library/Application Support/Flownative/Local Beach/Nginx" : "~/.Flownative/Local Beach/Nginx"
 
     bin.install "beach" => "beach"
-    system "#{bin}/beach", "setup", "--docker-folder", "#{lib}/localbeach", "--database-folder", database_path
+    system "#{bin}/beach", "setup", "--docker-folder", "#{lib}/localbeach", "--database-folder", database_path, "--nginx-folder", nginx_path
   end
 
   def caveats
