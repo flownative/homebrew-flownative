@@ -7,24 +7,35 @@ class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
   license "GPL-3.0-or-later"
-  version "v1.1.1+1"
+  version "v1.2.0+1"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.1.1+1/beach_darwin_amd64.zip"
-    sha256 "d448f14cf6430155b45ecb84fad6fc5d78e086da4f1aafcebb0ccdf2f1d26fd2"
+    url "https://github.com/flownative/localbeach/releases/download/v1.2.0+1/beach_darwin_amd64.zip"
+    sha256 "926687ae48f142866794e813734e98aab3b36957ae44e2a239a3ae64b5a9ab7f"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.1.1+1/beach_linux_amd64.zip"
-    sha256 "15a72857cc96015f9fe64f73e4f5225fd6ddbccd479ffe27f2273f741cfb488c"
+    url "https://github.com/flownative/localbeach/releases/download/v1.2.0+1/beach_linux_amd64.zip"
+    sha256 "f6c1048562c555f814275a59fc2b075f93855d07e243531cfb05f14e88511189"
   end
 
   bottle :unneeded
 
   conflicts_with "flownative/flownative/beach-cli", because: "localbeach replaces beach-cli"
 
+  depends_on "docker" => :build
+  depends_on "mkcert" => :run
+  depends_on "nss" => :run
+
   def install
     database_path = RUBY_PLATFORM.downcase.include?("darwin") ? "~/Library/Application Support/Flownative/Local Beach/MariaDB" : "~/.Flownative/Local Beach/MariaDB"
 
     bin.install "beach" => "beach"
     system "#{bin}/beach", "setup", "--docker-folder", "#{lib}/localbeach", "--database-folder", database_path
+  end
+
+  def caveats
+  <<~EOS
+Local Beach is built on top of Docker and Docker Compose. You will need a working setup of both in order to use Local
+Beach.
+  EOS
   end
 end
