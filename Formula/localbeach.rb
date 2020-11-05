@@ -7,14 +7,14 @@ class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
   license "GPL-3.0-or-later"
-  version "v1.4.0+1"
+  version "v1.5.0+1"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.4.0+1/beach_darwin_amd64.zip"
-    sha256 "2f2a6c1b60e0b580af744ae6aa83863b49db776505d5608bfdf987a543691613"
+    url "https://github.com/flownative/localbeach/releases/download/v1.5.0+1/beach_darwin_amd64.zip"
+    sha256 "9444b6004741134a81fed1f484a4a4e7ff7516d00bd926d6d3ef0bcc7d9fa02c"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.4.0+1/beach_linux_amd64.zip"
-    sha256 "4b1da8f97addbe1aae55d2668b8834699900afa675a5b397fdf66c10b5699370"
+    url "https://github.com/flownative/localbeach/releases/download/v1.5.0+1/beach_linux_amd64.zip"
+    sha256 "64f964ce1b8c106d5cd93f13a6d9c969610017d4707c3aa830188e29aba2404b"
   end
 
   bottle :unneeded
@@ -25,10 +25,8 @@ class Localbeach < Formula
   depends_on "nss" => :run
 
   def install
-    database_path = RUBY_PLATFORM.downcase.include?("darwin") ? "~/Library/Application Support/Flownative/Local Beach/MariaDB" : "~/.Flownative/Local Beach/MariaDB"
-
     bin.install "beach" => "beach"
-    system "#{bin}/beach", "setup", "--docker-folder", "#{lib}/localbeach", "--database-folder", database_path
+    system "#{bin}/beach", "setup"
   end
 
   def caveats
