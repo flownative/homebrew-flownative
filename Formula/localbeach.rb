@@ -7,14 +7,14 @@ class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
   license "GPL-3.0-or-later"
-  version "v1.10.1+2"
+  version "v1.11.0+2"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.10.1+2/beach_darwin_amd64.zip"
-    sha256 "31023d694b5a5e13138f95de8a69e6c29f3bbf707ed4602b73a5a56e82d6f9dd"
+    url "https://github.com/flownative/localbeach/releases/download/v1.11.0+2/beach_darwin_amd64.zip"
+    sha256 "1f9f7f3be8eb13b7b591c8dc156811de9674df6d67c2e620671f53b30597f67c"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.10.1+2/beach_linux_amd64.zip"
-    sha256 "16444b9c23042be350ff66828a39e0642ba0360c836fa5eaeb3589a64dba7056"
+    url "https://github.com/flownative/localbeach/releases/download/v1.11.0+2/beach_linux_amd64.zip"
+    sha256 "7e8dc0a2c5ded072a7095a2eb4f26c1da117c3979fc296eacb18c341ee99f514"
   end
 
   bottle :unneeded
