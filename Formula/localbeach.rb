@@ -7,19 +7,15 @@ class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
   license "GPL-3.0-or-later"
-  version "v1.11.2+1"
+  version "v1.11.2+2"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.11.2+1/beach_darwin_amd64.zip"
-    sha256 "8b56811e19b853b53290c1f523dfe6308acacb12d8acce3558bbaf0bf56d80ea"
+    url "https://github.com/flownative/localbeach/releases/download/v1.11.2+2/beach_darwin_amd64.zip"
+    sha256 "9ec100950465d15649f40075fa3f0d5b03e6c6fa88be3382c18fdcca9226902a"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.11.2+1/beach_linux_amd64.zip"
-    sha256 "7e625290fe51707fd8705425a7cbff52337c75d4d4da6a088d2ef24fdb92f09e"
+    url "https://github.com/flownative/localbeach/releases/download/v1.11.2+2/beach_linux_amd64.zip"
+    sha256 "0ce67982380669f33284202447bd8df7164200b5fb1b3303e1bf685708e78714"
   end
-
-  bottle :unneeded
-
-  conflicts_with "flownative/flownative/beach-cli", because: "localbeach replaces beach-cli"
 
   depends_on "mkcert" => :run
   depends_on "nss" => :run
