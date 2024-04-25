@@ -7,14 +7,14 @@ class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/beach"
   license "GPL-3.0-or-later"
-  version "v1.17.0+3"
+  version "v1.17.1.+1"
 
   if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.17.0+3/beach_darwin_amd64.zip"
-    sha256 "830d3ee4c2d6af80a4c68bd5d58cdb00d4c59d381a27fb4a7e1f516bfccf20ca"
+    url "https://github.com/flownative/localbeach/releases/download/v1.17.1.+1/beach_darwin_amd64.zip"
+    sha256 "539f56d129a42f4592253215284d57287464ca2e53be13d03a3304e9fdf2b9c6"
   else
-    url "https://github.com/flownative/localbeach/releases/download/v1.17.0+3/beach_linux_amd64.zip"
-    sha256 "8e106a27627d2dccbb3875275ed1bef91c7a4a14adaeda39cd454c37413ee592"
+    url "https://github.com/flownative/localbeach/releases/download/v1.17.1.+1/beach_linux_amd64.zip"
+    sha256 "fed314d42f908f79072cf5c398094487d66a25694c0ef1fe9e2ae22fec4881c3"
   end
 
   depends_on "mkcert" => :run
