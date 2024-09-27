@@ -5,29 +5,37 @@
 #
 class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
-  homepage "https://www.flownative.com/beach"
+  homepage "https://www.flownative.com/localbeach"
+  version "refs/tags/v1.18.0+1"
   license "GPL-3.0-or-later"
-  version "v1.17.3+1"
 
-  if RUBY_PLATFORM.downcase.include?("darwin")
-    url "https://github.com/flownative/localbeach/releases/download/v1.17.3+1/beach_darwin_amd64.zip"
-    sha256 "8b9940d21051658ad07d11d844b91e67ce5c7551083a9e49ce1d21c28aeebd5c"
-  else
-    url "https://github.com/flownative/localbeach/releases/download/v1.17.3+1/beach_linux_amd64.zip"
-    sha256 "850f21f9391a227d854214037978691dbbf67188e3f810a43ac51ba7020af6ef"
+  on_macos do
+    on_intel do
+      url "https://github.com/flownative/localbeach/releases/download/refs/tags/v1.18.0+1/beach_darwin_amd64.zip"
+      sha256 ""
+    end
+    on_arm do
+      url "https://github.com/flownative/localbeach/releases/download/refs/tags/v1.18.0+1/beach_darwin_arm64.zip"
+      sha256 ""
+    end
   end
 
-  depends_on "mkcert" => :run
-  depends_on "nss" => :run
+  on_linux do
+    url "https://github.com/flownative/localbeach/releases/download/refs/tags/v1.18.0+1/beach_linux_amd64.zip"
+    sha256 "5c9ebf2589be3591c552eaa8d5a9fddca11489170816327f2c9e8925d3e2bb7d"
+  end
+
+  depends_on "mkcert"
+  depends_on "nss"
 
   def install
     bin.install "beach" => "beach"
   end
 
   def caveats
-  <<~EOS
-Local Beach is built on top of Docker and Docker Compose. You will need a working setup of both in order to use Local
-Beach.
-  EOS
+    <<~EOS
+    Local Beach is built on top of Docker and Docker Compose.
+    You will need a working setup of both in order to use Local Beach.
+    EOS
   end
 end
