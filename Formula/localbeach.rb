@@ -6,23 +6,23 @@
 class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/localbeach"
-  version "1.18.0+2"
+  version "1.18.0+3"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_intel do
-      url "https://github.com/flownative/localbeach/releases/download/1.18.0+2/beach_darwin_amd64.zip"
+      url "https://github.com/flownative/localbeach/releases/download/v1.18.0+3/beach_darwin_amd64.zip"
       sha256 ""
     end
     on_arm do
-      url "https://github.com/flownative/localbeach/releases/download/1.18.0+2/beach_darwin_arm64.zip"
+      url "https://github.com/flownative/localbeach/releases/download/v1.18.0+3/beach_darwin_arm64.zip"
       sha256 ""
     end
   end
 
   on_linux do
-    url "https://github.com/flownative/localbeach/releases/download/1.18.0+2/beach_linux_amd64.zip"
-    sha256 "5d8adc1b6e20929821ce004a655ea10317896b7722aed2dd419ce9c0e3dd2b8c"
+    url "https://github.com/flownative/localbeach/releases/download/v1.18.0+3/beach_linux_amd64.zip"
+    sha256 "f869426b2f6e26e94cedfc81ff3abf94b5694fc0574b95a39696428697855266"
   end
 
   depends_on "mkcert"
