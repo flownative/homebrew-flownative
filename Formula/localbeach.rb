@@ -6,7 +6,7 @@
 class Localbeach < Formula
   desc "Command-line tool for Flownative Beach"
   homepage "https://www.flownative.com/localbeach"
-  version "1.21.0+1"
+  version "1.22.1+1"
   license "GPL-3.0-or-later"
 
   depends_on "mkcert"
@@ -14,18 +14,18 @@ class Localbeach < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/flownative/localbeach/releases/download/v1.21.0+1/beach_darwin_amd64.zip"
-      sha256 "24637b25d693a4a3a66055e5df8b48f3bdce47e903c1045c593f0617ec54f49e"
+      url "https://github.com/flownative/localbeach/releases/download/v1.22.1+1/beach_darwin_amd64.zip"
+      sha256 "b324d6e46f01aa46b5ad56f1ed4fc10923cc44b4f4a73ff6f5f375db04748d55"
     end
     on_arm do
-      url "https://github.com/flownative/localbeach/releases/download/v1.21.0+1/beach_darwin_arm64.zip"
-      sha256 "4d1cd52d5bc0b35ff41f1aababad0696c817c209de3c735450e0842248b03a26"
+      url "https://github.com/flownative/localbeach/releases/download/v1.22.1+1/beach_darwin_arm64.zip"
+      sha256 "956f726822ac5e8bd9fa2041d63238347476c3a944d2d3df8c2fa3ad038f8778"
     end
   end
 
   on_linux do
-    url "https://github.com/flownative/localbeach/releases/download/v1.21.0+1/beach_linux_amd64.zip"
-    sha256 "9dd921230103cb251a183fe9c6d6181dbc20d6c112a991042e0dedf08b22e2e1"
+    url "https://github.com/flownative/localbeach/releases/download/v1.22.1+1/beach_linux_amd64.zip"
+    sha256 "beaaf8f1d6b6c5bc51b8ef6c61491d621b6a0a5d4a14af8e38aba68841336c38"
   end
 
   def install
@@ -40,6 +40,6 @@ class Localbeach < Formula
   end
 
   test do
-    assert_match "Local Beach v1.21.0+1", shell_output("#{bin}/beach version")
+    assert_match "Local Beach v1.22.1+1", shell_output("#{bin}/beach version")
   end
 end
