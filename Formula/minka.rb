@@ -9,9 +9,9 @@ class Minka < Formula
   homepage "https://github.com/flownative/minka-cli"
   url "git@github.com:flownative/minka-cli.git",
       using:    :git,
-      tag:      "v0.45.0",
-      revision: "a9f6a458be0c30c185c3355ca72fee2a7dd4f2e7"
-  version "0.45.0"
+      tag:      "v0.46.0",
+      revision: "21e96bae8f9de858240c3d1438e5e6aedabbbe93"
+  version "0.46.0"
   license :cannot_represent
 
   depends_on "go" => :build
